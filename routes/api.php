@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Api\LeadController;
 use App\Http\Controllers\Api\ProjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/projects', [ProjectController::class, 'index']);
-
+Route::post('/contacts', [LeadController::class, 'store']);
 Route::get('/projects/{slug}', [ProjectController::class, 'show']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
